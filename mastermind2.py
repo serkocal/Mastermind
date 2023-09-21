@@ -26,6 +26,13 @@ def check(code, guess):
 
     return correct_place, correct_num
 
+if len(sys.argv) > 1 and sys.argv[1] in ["-h","--help","help"]:
+    print("""This is a codebreaking game.
+There is a 4 digit code. You can try your guess code by pressing enter and see how many are at the right place and howmany are not.
+Every digit at the right place creates one red box, every digit thats in the code but wrong place creates a white box.
+You have 10 chances to guess the code.""")
+    exit()
+
 code = "".join(random.choices("12345678",k=4))
 
 colors = {"1":"31",
